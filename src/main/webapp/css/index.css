@@ -1,0 +1,59 @@
+body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #212121;
+    color: white;
+    font-family: Roboto, serif;
+    font-size: medium;
+    margin: 0;
+    padding: 0;
+}
+header{
+    flex-shrink: 0;
+    background: #131313;
+    display: flex;
+    font-size: x-large;
+    padding: 15px;
+    margin: 0;
+}
+#names-sign{
+    width: 30%;
+}
+#variant-sign{
+    width: 30%;
+    text-align: right;
+}
+#lab-sign{
+    width: 40%;
+    text-align: center;
+    color: crimson;
+}
+#lab-sign span{
+    color: greenyellow;
+    font-style: italic;
+}
+#svg-div{
+    display: flex;
+    align-items: center;
+}
+#graph-and-input-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#input-div{
+    display: block;
+}
+main{
+    flex: 1 0 auto;
+}
+footer{
+    flex-shrink: 0;
+    text-align: center;
+    background: #131313;
+}
+footer div{
+    margin: 10px;
+}
+
