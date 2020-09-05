@@ -1,76 +1,75 @@
-#figure {
-    width: 500px;
+#graph{
+    margin: 15px auto;
+    display: block;
+
 }
 
-.figure__shape {
-    fill: red;
-    stroke-width: 0px;
+.figure-shape {
+    fill: #cf1a1a;
+    stroke-width: 0;
     stroke-dasharray: 1000;
     stroke-dashoffset: 0;
     fill-opacity: 100;
 }
 
-.figure__shape1 {
-    fill: orange;
-    stroke-location: inside;
-    stroke-width: 0px;
+.figure-shape1 {
+    fill: darkorange;
+    stroke-width: 0;
     stroke-dasharray: 1000;
     stroke-dashoffset: 0;
     fill-opacity: 100;
 }
 
-.figure__shape2 {
-    fill: yellow;
-    stroke-width: 0px;
+.figure-shape2 {
+    fill: #d9d901;
+    stroke-width: 0;
     stroke-dasharray: 1000;
     stroke-dashoffset: 0;
     fill-opacity: 100;
 }
 
-.figure__shape3 {
-    fill: green;
-    stroke-width: 0px;
+.figure-shape3 {
+    fill: forestgreen;
+    stroke-width: 0;
     stroke-dasharray: 1000;
     stroke-dashoffset: 0;
     fill-opacity: 100;
 }
 
-.figure__shape4 {
-    fill: blue;
-    stroke-width: 0px;
+.figure-shape4 {
+    fill: #1e2cbe;
+    stroke-width: 0;
     stroke-dasharray: 1000;
     stroke-dashoffset: 0;
     fill-opacity: 100;
 }
 
-.figure__axis {
+.figure-axis {
     stroke-width: 2px;
-    stroke: black;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    fill-opacity: 1;
-    stroke-dashoffset: 0;
+    stroke: white;
 }
 
-.figure__axis-arrow {
-    stroke: black;
+.figure-axis-arrow {
+    stroke: white;
     stroke-width: 2px;
-    fill: black;
+    fill: white;
     stroke-dasharray: 100;
     stroke-dashoffset: 0;
     fill-opacity: 1;
 }
 
-.figure__axis-dash {
+.figure-axis-dash {
     stroke-width: 2px;
-    stroke: black;
+    stroke: white;
     stroke-dasharray: 10;
     stroke-dashoffset: 0;
     fill-opacity: 1;
 }
 
-.figure__axis-mark {
+.figure-axis-text {
     fill-opacity: 1;
     stroke-dashoffset: 0;
-    fill: black;
+    fill: white;
+    font-size: small;
 }
+
