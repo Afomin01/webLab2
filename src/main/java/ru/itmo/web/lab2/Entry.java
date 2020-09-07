@@ -33,7 +33,7 @@ public class Entry {
     }
 
     public void generateResults() {
-       rSet.forEach(r -> hitCheck(x, y, r));
+       rSet.forEach(r -> resultsList.add(hitCheck(x, y, r)));
     }
 
     private static boolean hitCheck(float x, int y, int r) {
