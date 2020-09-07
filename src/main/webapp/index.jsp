@@ -5,16 +5,11 @@
     <title>Web lab 2</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/svg.css">
+    <link rel="stylesheet" href="css/mainPage.css">
     <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
-        <div id="names-sign">
-            Бакин&nbspАртем,&nbspP3213<br>Купперштейн&nbspДмитрий,&nbspP3213
-        </div>
-        <div id="lab-sign">Лабораторная №1<br><span>по Веб-программированию</span></div>
-        <div id="variant-sign">Вариант: 8218</div>
-    </header>
+    <jsp:include page="jsp/header.jsp"/>
     <main>
         <div id="graph-and-input-div">
             <div id="svg-div">
@@ -116,13 +111,8 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div>© Artem Bakin and Dmitriy Kuperstein, 2020</div>
-        <div>
-            <a href="https://github.com/Afomin01/webLab2">
-                <img src="assets/GitHub-Mark-Light-64px.png" width="32" height="32">
-            </a>
-        </div>
-    </footer>
+    <jsp:include page="jsp/footer.jsp"/>
 </body>
+<script src="js/jQuery.js"></script>
+<script src="js/index.js"></script>
 </html>

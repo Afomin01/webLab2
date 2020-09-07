@@ -1,0 +1,35 @@
+#names-sign{
+    width: 30%;
+}
+#variant-sign{
+    width: 30%;
+    text-align: right;
+}
+#lab-sign{
+    width: 40%;
+    text-align: center;
+    color: crimson;
+}
+#lab-sign span{
+    color: greenyellow;
+    font-style: italic;
+}
+#svg-div{
+    display: flex;
+    align-items: center;
+}
+#graph-and-input-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#input-div{
+    display: block;
+}
+#checkForm{
+    background: #181818;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+}
