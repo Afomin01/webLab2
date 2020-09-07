@@ -1,25 +1,32 @@
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!-- <%@ page contentType="text/html;charset=UTF-8" language="java" %> -->
 <html>
 <head>
     <title>Web lab 2</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css"
+          integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/svg.css">
     <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
-        <div id="names-sign">
-            Бакин&nbspАртем,&nbspP3213<br>Купперштейн&nbspДмитрий,&nbspP3213
-        </div>
-        <div id="lab-sign">Лабораторная №1<br><span>по Веб-программированию</span></div>
-        <div id="variant-sign">Вариант: 8218</div>
+        <nav class="navbar bg-primary d-flex text-nowrap flex-nowrap">
+            <h5 class="text-left">
+                Бакин&nbspАртем,&nbspP3213<br>Купперштейн&nbspДмитрий,&nbspP3213
+            </h5>
+            <h5 class="text-center">
+                Лабораторная №1<br><span>по Веб-программированию</span>
+            </h5>
+            <h5 class="text-right">Вариант: 8218</h5>
+        </nav>
     </header>
     <main>
-        <div id="graph-and-input-div">
+        <div class="d-flex justify-content-center">
             <div id="svg-div">
-                <svg height="600" width="600" viewBox="-35 -35 420 420" xmlns="http://www.w3.org/2000/svg" id="graph">
-
+                <svg height="400" width="400" viewBox="-35 -35 420 420" xmlns="http://www.w3.org/2000/svg" id="graph">
                     <path d="M175 175 87.5 175 A87.5 87.5 0 0 0 175 262.5Z" class="figure-shape4"/>
                     <path d="M175 175 105 175 A70 70 0 0 0 175 245Z" class="figure-shape3"/>
                     <path d="M175 175 122.5 175 A52.5 52.5 0 0 0 175 227.5Z" class="figure-shape2"/>
@@ -90,13 +97,14 @@
                     <text x="62" y="167" class="figure-axis-text">-3</text>
                     <text x="27" y="167" class="figure-axis-text">-4</text>
                     <text x="-7" y="167" class="figure-axis-text">-5</text>
-
                 </svg>
             </div>
-            <div id="input-div">
-                <form id="checkForm">
-                    <input type="text" id="xText">
-                    <select id="ySelect" name="rComboBox">
+            <form class="align-self-center ml-5">
+                <div class="form-group">
+                    <label for="xText">X value</label>
+                    <input type="text" id="xText" class="form-control mb-3">
+                    <label for="ySelect">Y value</label>
+                    <select id="ySelect" name="rComboBox" class="form-control mb-3">
                         <option>-4</option>
                         <option>-3</option>
                         <option>-2</option>
@@ -107,22 +115,44 @@
                         <option>3</option>
                         <option>4</option>
                     </select>
-                    <input type="checkbox" >
-                    <input type="checkbox" >
-                    <input type="checkbox" >
-                    <input type="checkbox" >
-                    <input type="checkbox" >
-                </form>
-            </div>
+
+                    R value<br>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck1">
+                        <label class="custom-control-label" for="rCheck1">1</label>
+                    </div>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck2">
+                        <label class="custom-control-label" for="rCheck2">2</label>
+                    </div>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck3">
+                        <label class="custom-control-label" for="rCheck3">3</label>
+                    </div>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck4">
+                        <label class="custom-control-label" for="rCheck4">4</label>
+                    </div>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck5">
+                        <label class="custom-control-label" for="rCheck5">5</label>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
     <footer>
-        <div>© Artem Bakin and Dmitriy Kuperstein, 2020</div>
-        <div>
+        <nav class="navbar fixed-bottom bg-primary justify-content-center p-3">
             <a href="https://github.com/Afomin01/webLab2">
                 <img src="assets/GitHub-Mark-Light-64px.png" width="32" height="32">
             </a>
-        </div>
+            <h6 class="text-left ml-3">
+                © Artem Bakin and Dmitriy Kuperstein, 2020
+            </h6>
+        </nav>
     </footer>
 </body>
 </html>
