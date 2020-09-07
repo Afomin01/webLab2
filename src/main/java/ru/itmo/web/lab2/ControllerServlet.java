@@ -21,27 +21,23 @@ public class ControllerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             float x = Float.parseFloat(req.getParameter("x").replace(',', '.'));
-            if (true) { // FIXME
-                throw new IllegalArgumentException("Invalid x value \"" + x + "\"");
+            if (x <= -5 || x >= 3) {
+                throw new IllegalArgumentException();
             }
 
             int y = Integer.parseInt(req.getParameter("y"));
-            if (y < -3 || y > 5) {
-                throw new IllegalArgumentException("Invalid y value \"" + y + "\"");
+            if (y < -4 || y > 4) {
+                throw new IllegalArgumentException();
             }
 
             String[] rSet = req.getParameterValues("rSet");
             if (rSet.length < 1 || rSet.length > 5) {
-                throw new IllegalArgumentException("Invalid r set size");
+                throw new IllegalArgumentException();
             }
             int[] intRSet = Stream.of(rSet).mapToInt(Integer::parseInt).toArray();
             if (IntStream.of(intRSet).anyMatch(r -> r > 5 || r < -5)) {
                 throw new IllegalArgumentException("Invalid r value");
             }
-
-            req.getSession().setAttribute("x", x);
-            req.getSession().setAttribute("y", y);
-            req.getSession().setAttribute("rSet", intRSet);
 
             getServletContext().getRequestDispatcher("/AreaCheckServlet").forward(req, resp);
         } catch (Exception e) {
