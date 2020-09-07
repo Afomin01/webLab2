@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css"
           integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/svg.css">
     <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
     <header>
@@ -27,23 +29,23 @@
         <div class="d-flex justify-content-center">
             <div id="svg-div">
                 <svg height="400" width="400" viewBox="-35 -35 420 420" xmlns="http://www.w3.org/2000/svg" id="graph">
-                    <path d="M175 175 87.5 175 A87.5 87.5 0 0 0 175 262.5Z" class="figure-shape4"/>
-                    <path d="M175 175 105 175 A70 70 0 0 0 175 245Z" class="figure-shape3"/>
-                    <path d="M175 175 122.5 175 A52.5 52.5 0 0 0 175 227.5Z" class="figure-shape2"/>
-                    <path d="M175 175 140 175 A35 35 0 0 0 175 210Z" class="figure-shape1"/>
-                    <path d="M175 175 157.5 175 A17.5 17.5 0 0 0 175 192.5Z" class="figure-shape"/>
+                    <path d="M175 175 87.5 175 A87.5 87.5 0 0 0 175 262.5Z" class="figure-shape5"/>
+                    <path d="M175 175 105 175 A70 70 0 0 0 175 245Z" class="figure-shape4"/>
+                    <path d="M175 175 122.5 175 A52.5 52.5 0 0 0 175 227.5Z" class="figure-shape3"/>
+                    <path d="M175 175 140 175 A35 35 0 0 0 175 210Z" class="figure-shape2"/>
+                    <path d="M175 175 157.5 175 A17.5 17.5 0 0 0 175 192.5Z" class="figure-shape1"/>
 
-                    <polygon points="175,175 175,0 262.5,0 262.5,175" class="figure-shape4"/>
-                    <polygon points="175,175 175,35 245,35 245,175" class="figure-shape3"/>
-                    <polygon points="175,175 175,70 227.5,70 227.5,175" class="figure-shape2"/>
-                    <polygon points="175,175 175,105 210,105 210,175" class="figure-shape1"/>
-                    <polygon points="175,175 175,140 192.5,140 192.5,175" class="figure-shape"/>
+                    <polygon points="175,175 175,0 262.5,0 262.5,175" class="figure-shape5"/>
+                    <polygon points="175,175 175,35 245,35 245,175" class="figure-shape4"/>
+                    <polygon points="175,175 175,70 227.5,70 227.5,175" class="figure-shape3"/>
+                    <polygon points="175,175 175,105 210,105 210,175" class="figure-shape2"/>
+                    <polygon points="175,175 175,140 192.5,140 192.5,175" class="figure-shape1"/>
 
-                    <polygon points="175,175 350,175 175,350" class="figure-shape4"/>
-                    <polygon points="175,175 315,175 175,315" class="figure-shape3"/>
-                    <polygon points="175,175 280,175 175,280" class="figure-shape2"/>
-                    <polygon points="175,175 245,175 175,245" class="figure-shape1"/>
-                    <polygon points="175,175 210,175 175,210" class="figure-shape"/>
+                    <polygon points="175,175 350,175 175,350" class="figure-shape5"/>
+                    <polygon points="175,175 315,175 175,315" class="figure-shape4"/>
+                    <polygon points="175,175 280,175 175,280" class="figure-shape3"/>
+                    <polygon points="175,175 245,175 175,245" class="figure-shape2"/>
+                    <polygon points="175,175 210,175 175,210" class="figure-shape1"/>
 
                     <line x1="171" y1="0" x2="179" y2="0" class="figure-axis-dash"/>
                     <line x1="171" y1="35" x2="179" y2="35" class="figure-axis-dash"/>
@@ -118,23 +120,23 @@
 
                     R value<br>
                     <div class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck1">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck1" value="1">
                         <label class="custom-control-label" for="rCheck1">1</label>
                     </div>
                     <div class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck2">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck2" value="2">
                         <label class="custom-control-label" for="rCheck2">2</label>
                     </div>
                     <div class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck3">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck3" value="3">
                         <label class="custom-control-label" for="rCheck3">3</label>
                     </div>
                     <div class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck4">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck4" value="4">
                         <label class="custom-control-label" for="rCheck4">4</label>
                     </div>
                     <div class="custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck5">
+                        <input type="checkbox" class="rCheck custom-control-input" id="rCheck5" value="5">
                         <label class="custom-control-label" for="rCheck5">5</label>
                     </div>
                     <div class="text-center mt-3">
