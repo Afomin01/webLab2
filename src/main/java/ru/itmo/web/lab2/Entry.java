@@ -8,6 +8,15 @@ public class Entry {
     private List<Integer> rSet;
     private List<Boolean> resultsList;
 
+    public Entry() {
+    }
+
+    public Entry(float x, int y, List<Integer> rSet) {
+        this.x = x;
+        this.y = y;
+        this.rSet = rSet;
+    }
+
     public float getX() {
         return x;
     }

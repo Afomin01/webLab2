@@ -36,7 +36,7 @@ public class ControllerServlet extends HttpServlet {
             }
             int[] intRSet = Stream.of(rSet).mapToInt(Integer::parseInt).toArray();
             if (IntStream.of(intRSet).anyMatch(r -> r > 5 || r < -5)) {
-                throw new IllegalArgumentException("Invalid r value");
+                throw new IllegalArgumentException();
             }
 
             getServletContext().getRequestDispatcher("/AreaCheckServlet").forward(req, resp);
