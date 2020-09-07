@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @WebServlet
-@SuppressWarnings("unchecked")
 public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,14 +21,17 @@ public class AreaCheckServlet extends HttpServlet {
                 .map(Integer::valueOf)
                 .collect(Collectors.toList());
 
-        Entry entry = new Entry(x, y, rSet);
-        entry.generateResults();
-
-        if (req.getSession().getAttribute("entries") == null) {
-            EntriesBean entries = new EntriesBean(new ArrayList<>());
+        EntriesBean entries = (EntriesBean) req.getSession().getAttribute("entries");
+        if (entries == null) {
+            entries = new EntriesBean(new ArrayList<>());
             req.getSession().setAttribute("entries", entries);
         }
-        ((List<Entry>) req.getSession().getAttribute("entries")).add(entry);
+
+        for (int r : rSet) {
+            Entry entry = new Entry(x, y, r);
+            entry.checkHit();
+            entries.getEntries().add(entry);
+        }
 
         getServletContext().getRequestDispatcher("/secondary-page.jsp").forward(req, resp);
     }

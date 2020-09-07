@@ -1,20 +1,15 @@
 package ru.itmo.web.lab2;
 
-import java.util.List;
-
 public class Entry {
     private float x;
     private int y;
-    private List<Integer> rSet;
-    private List<Boolean> resultsList;
+    private int r;
+    private boolean isHit;
 
-    public Entry() {
-    }
-
-    public Entry(float x, int y, List<Integer> rSet) {
+    public Entry(float x, int y, int r) {
         this.x = x;
         this.y = y;
-        this.rSet = rSet;
+        this.r = r;
     }
 
     public float getX() {
@@ -33,27 +28,27 @@ public class Entry {
         this.y = y;
     }
 
-    public List<Integer> getRSet() {
-        return rSet;
+    public int getR() {
+        return r;
     }
 
-    public void setRSet(List<Integer> rSet) {
-        this.rSet = rSet;
+    public void setR(int r) {
+        this.r = r;
     }
 
-    public void generateResults() {
-       rSet.forEach(r -> resultsList.add(hitCheck(x, y, r)));
+    public boolean isHit() {
+        return isHit;
     }
 
-    private static boolean hitCheck(float x, int y, int r) {
+    public void checkHit() {
         if (x >= 0 && y >= 0) {
-            return x <= r / 2. && y <= r;
+            isHit = x <= r / 2. && y <= r;
         } else if (x >= 0 && y <= 0) {
-            return y >= x - r;
+            isHit = y >= x - r;
         } else if (x <= 0 && y <= 0) {
-            return Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r / 2., 2);
+            isHit = Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r / 2., 2);
         } else {
-            return false;
+            isHit = false;
         }
     }
 }
