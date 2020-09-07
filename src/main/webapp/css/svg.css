@@ -3,50 +3,37 @@
     display: block;
 
 }
-
 .figure-shape {
     fill: #cf1a1a;
-    stroke-width: 0;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 0;
-    fill-opacity: 100;
+
 }
 
 .figure-shape1 {
     fill: darkorange;
-    stroke-width: 0;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 0;
-    fill-opacity: 100;
+
 }
 
 .figure-shape2 {
     fill: #d9d901;
-    stroke-width: 0;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 0;
-    fill-opacity: 100;
+
 }
 
 .figure-shape3 {
     fill: forestgreen;
-    stroke-width: 0;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 0;
-    fill-opacity: 100;
+
 }
 
 .figure-shape4 {
     fill: #1e2cbe;
-    stroke-width: 0;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 0;
-    fill-opacity: 100;
+
 }
 
 .figure-axis {
     stroke-width: 2px;
     stroke: white;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw-anim 2.5s linear forwards;
 }
 
 .figure-axis-arrow {
@@ -54,22 +41,35 @@
     stroke-width: 2px;
     fill: white;
     stroke-dasharray: 100;
-    stroke-dashoffset: 0;
-    fill-opacity: 1;
+    stroke-dashoffset: 100;
+    fill-opacity: 0;
+    animation: draw-anim 2s linear forwards;
 }
 
 .figure-axis-dash {
     stroke-width: 2px;
     stroke: white;
     stroke-dasharray: 10;
-    stroke-dashoffset: 0;
-    fill-opacity: 1;
+    stroke-dashoffset: 10;
+    animation: draw-anim 1s linear forwards;
 }
 
 .figure-axis-text {
-    fill-opacity: 1;
-    stroke-dashoffset: 0;
+    fill-opacity: 0;
     fill: white;
     font-size: small;
+    animation: draw-anim 2.5s linear forwards;
 }
 
+@keyframes draw-anim {
+    50% {
+        fill-opacity: 0.8;
+    }
+    80% {
+        fill-opacity: 0.9;
+    }
+    to {
+        fill-opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

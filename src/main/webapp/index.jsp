@@ -95,6 +95,23 @@
             </div>
             <div id="input-div">
                 <form id="checkForm">
+                    <input type="text" id="xText">
+                    <select id="ySelect" name="rComboBox">
+                        <option>-4</option>
+                        <option>-3</option>
+                        <option>-2</option>
+                        <option>-1</option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <input type="checkbox" >
+                    <input type="checkbox" >
+                    <input type="checkbox" >
+                    <input type="checkbox" >
+                    <input type="checkbox" >
                 </form>
             </div>
         </div>
