@@ -21,16 +21,17 @@ public class ControllerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             float x = Float.parseFloat(req.getParameter("x").replace(',', '.'));
+            int y = Integer.parseInt(req.getParameter("y"));
+            String[] rSet = req.getParameterValues("rSet[]");
+
             if (x <= -5 || x >= 3) {
                 throw new IllegalArgumentException();
             }
 
-            int y = Integer.parseInt(req.getParameter("y"));
             if (y < -4 || y > 4) {
                 throw new IllegalArgumentException();
             }
 
-            String[] rSet = req.getParameterValues("rSet");
             if (rSet.length < 1 || rSet.length > 5) {
                 throw new IllegalArgumentException();
             }
@@ -39,7 +40,7 @@ public class ControllerServlet extends HttpServlet {
                 throw new IllegalArgumentException();
             }
 
-            getServletContext().getRequestDispatcher("/AreaCheckServlet").forward(req, resp);
+            getServletContext().getRequestDispatcher("/areaCheckServlet").forward(req, resp);
         } catch (Exception e) {
             getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
         }

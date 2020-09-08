@@ -22,7 +22,7 @@ public class AreaCheckServlet extends HttpServlet {
         int y = Integer.parseInt(req.getParameter("y"));
         ArrayList<Entry> results = new ArrayList<>();
 
-        List<Integer> rSet =  Stream.of(req.getParameterValues("rSet"))
+        List<Integer> rSet =  Stream.of(req.getParameterValues("rSet[]"))
                 .map(Integer::valueOf)
                 .collect(Collectors.toList());
 
@@ -40,6 +40,6 @@ public class AreaCheckServlet extends HttpServlet {
         }
         req.setAttribute("results", results);
 
-        getServletContext().getRequestDispatcher("/secondary-page.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/jsp/secondPage.jsp").forward(req, resp);
     }
 }

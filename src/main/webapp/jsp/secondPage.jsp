@@ -27,7 +27,7 @@
                     <td> ${entry.x}</td>
                     <td> ${entry.y}</td>
                     <td> ${entry.r}</td>
-                    <td> ${entry.isHit} </td>
+                    <td> ${entry.hitResult} </td>
                 </tr>
             </c:forEach>
             </tbody>

@@ -1,11 +1,13 @@
 package beans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EntriesBean {
     private List<Entry> entries;
 
     public EntriesBean() {
+        entries = new ArrayList<>();
     }
 
     public EntriesBean(List<Entry> entries) {

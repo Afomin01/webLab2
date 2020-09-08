@@ -4,12 +4,20 @@ public class Entry {
     private float x;
     private int y;
     private int r;
-    private boolean isHit;
+    private boolean hitResult;
 
     public Entry(float x, int y, int r) {
         this.x = x;
         this.y = y;
         this.r = r;
+    }
+
+    public boolean isHitResult() {
+        return hitResult;
+    }
+
+    public void setHitResult(boolean hitResult) {
+        this.hitResult = hitResult;
     }
 
     public float getX() {
@@ -36,19 +44,15 @@ public class Entry {
         this.r = r;
     }
 
-    public boolean getHit() {
-        return isHit;
-    }
-
     public void checkHit() {
         if (x >= 0 && y >= 0) {
-            isHit = x <= r / 2. && y <= r;
+            hitResult = x <= r / 2. && y <= r;
         } else if (x >= 0 && y <= 0) {
-            isHit = y >= x - r;
+            hitResult = y >= x - r;
         } else if (x <= 0 && y <= 0) {
-            isHit = Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r / 2., 2);
+            hitResult = Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r / 2., 2);
         } else {
-            isHit = false;
+            hitResult = false;
         }
     }
 }
