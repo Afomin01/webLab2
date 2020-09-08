@@ -20,6 +20,8 @@ public class AreaCheckServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         float x = Float.parseFloat(req.getParameter("x").replace(',', '.'));
         int y = Integer.parseInt(req.getParameter("y"));
+        ArrayList<Entry> results = new ArrayList<>();
+
         List<Integer> rSet =  Stream.of(req.getParameterValues("rSet"))
                 .map(Integer::valueOf)
                 .collect(Collectors.toList());
@@ -34,7 +36,9 @@ public class AreaCheckServlet extends HttpServlet {
             Entry entry = new Entry(x, y, r);
             entry.checkHit();
             entries.getEntries().add(entry);
+            results.add(entry);
         }
+        req.setAttribute("results", results);
 
         getServletContext().getRequestDispatcher("/secondary-page.jsp").forward(req, resp);
     }

@@ -1,25 +1,4 @@
-#names-sign{
-    width: 30%;
-}
-#variant-sign{
-    display: table;
-    height: 100%;
-    width: 30%;
-    text-align: right;
-}
-#variant-sign > div{
-    display: table-cell;
-    vertical-align: middle;
-}
-#lab-sign{
-    width: 40%;
-    text-align: center;
-    color: crimson;
-}
-#lab-sign span{
-    color: greenyellow;
-    font-style: italic;
-}
+
 #svg-div{
     display: flex;
     align-items: center;

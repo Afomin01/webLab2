@@ -1,0 +1,18 @@
+button{
+    margin: 30px auto;
+    font-size: large;
+    width: 200px;
+    height: 40px;
+}
+div{
+    display: flex;
+    flex-direction: column;
+}
+#result-table{
+    table-layout: fixed;
+    width: 70%;
+    margin: 20px 15% 0 15%;
+    border-spacing: 2px;
+    border: 2px solid white;
+    border-collapse: collapse;
+}
