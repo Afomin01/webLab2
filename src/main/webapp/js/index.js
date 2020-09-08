@@ -19,7 +19,7 @@ function getSelectedR() {
 function validate(suppressErr=false){
     $('#form-errors').text('');
     if(isNaN(getX())) {
-        if(!suppressErr) $("#form-errors").text("X must be a number");
+        if(!suppressErr) $("#form-errors").text("X must be a number in range (-5;3)");
         return false;
     }
     if (parseFloat(getX()) >= 3 || parseFloat(getX()) <= -5 ) {
@@ -65,6 +65,11 @@ $(function () {
                     url: "controllerServlet",
                     data: {x: parseFloat(getX()), rSet: getSelectedR(), y: getY()},
 
+                    success: function (data) {
+                        var newDoc = document.open("text/html", "replace");
+                        newDoc.write(data);
+                        newDoc.close()
+                    },
                     error: function (xhr, status, error) {
                         alert("Server error: " + xhr.responseText);
                     },
