@@ -18,8 +18,8 @@ import java.util.stream.Stream;
 public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        float x = Float.parseFloat(req.getParameter("x").replace(',', '.'));
-        int y = Integer.parseInt(req.getParameter("y"));
+        double x = Double.parseDouble(req.getParameter("x").replace(',', '.'));
+        double y = Double.parseDouble(req.getParameter("y").replace(',', '.'));
         ArrayList<Entry> results = new ArrayList<>();
 
         List<Integer> rSet =  Stream.of(req.getParameterValues("rSet[]"))

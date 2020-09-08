@@ -27,7 +27,8 @@
                             <td>${entry.x}</td>
                             <td>${entry.y}</td>
                             <td>${entry.r}</td>
-                            <td>${entry.hitResult} </td>
+                            <c:if test="${entry.hitResult}"><td style="color: #3b993b">${entry.hitResult}</td></c:if>
+                            <c:if test="${not entry.hitResult}"><td style="color: #cf1a1a">${entry.hitResult}</td></c:if>
                         </tr>
                     </c:forEach>
                     </tbody>

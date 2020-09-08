@@ -103,58 +103,79 @@ $(function () {
     })
 
     $('#graph').on("click", (event)=>{
-        let svg = document.getElementById('graph');
-        let pt = svg.createSVGPoint();
-        pt.x = event.clientX;
-        pt.y = event.clientY;
-        pt = pt.matrixTransform(svg.getScreenCTM().inverse());
-        let x = (pt.x - 175)/35;
-        let y = (pt.y - 175)/-35;
-        let circleElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle' );
+        if(getSelectedR().length===0){
+            $("#form-errors").text("You must select at least one R value to interact with graph");
+        }else {
+            let circleElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle' );
+            let svg = document.getElementById('graph');
+            let pt = svg.createSVGPoint();
+            pt.x = event.clientX;
+            pt.y = event.clientY;
+            pt = pt.matrixTransform(svg.getScreenCTM().inverse());
+            let x = (pt.x - 175) / 35;
+            let y = (pt.y - 175) / -35;
 
-        circleElement.setAttribute("class", "generated-circle");
+            circleElement.setAttribute("class", "placed-circle")
 
-        circleElement.setAttribute("r", "4");
-        circleElement.setAttribute("cx", Math.round(pt.x));
-        circleElement.setAttribute("cy", Math.round(pt.y));
-        svg.append(circleElement);
+            circleElement.setAttribute("r", "4");
+            circleElement.setAttribute("cx", Math.round(pt.x));
+            circleElement.setAttribute("cy", Math.round(pt.y));
+            svg.append(circleElement);
+
+            $.ajax({
+                type: "POST",
+                url: "controllerServlet",
+                data: {x: x, rSet: getSelectedR(), y: y},
+
+                success: function (data) {
+                    var newDoc = document.open("text/html", "replace");
+                    newDoc.write(data);
+                    newDoc.close();
+                },
+                error: function (xhr, status, error) {
+                    alert("Server error: " + xhr.responseText);
+                },
+
+                timeout: function () {
+                    alert("Timeout reached");
+                }
+            });
+        }
     })
 
     $('#1').on('click', ()=>{
         if(!$('#1').is(':checked')){
-            $('.figure-shape').animate({"fill-opacity": "0"}, 600);
-        } else {
-            $('.figure-shape').animate({"fill-opacity": "1"}, 600);
-        }
-    })
-    $('#2').on('click', ()=>{
-        if(!$('#2').is(':checked')){
             $('.figure-shape1').animate({"fill-opacity": "0"}, 600);
         } else {
             $('.figure-shape1').animate({"fill-opacity": "1"}, 600);
         }
     })
-    $('#3').on('click', ()=>{
-        if(!$('#3').is(':checked')){
+    $('#2').on('click', ()=>{
+        if(!$('#2').is(':checked')){
             $('.figure-shape2').animate({"fill-opacity": "0"}, 600);
         } else {
             $('.figure-shape2').animate({"fill-opacity": "1"}, 600);
         }
     })
-    $('#4').on('click', ()=>{
-        if(!$('#4').is(':checked')){
+    $('#3').on('click', ()=>{
+        if(!$('#3').is(':checked')){
             $('.figure-shape3').animate({"fill-opacity": "0"}, 600);
         } else {
             $('.figure-shape3').animate({"fill-opacity": "1"}, 600);
         }
     })
-    $('#5').on('click', ()=>{
-        if(!$('#5').is(':checked')){
+    $('#4').on('click', ()=>{
+        if(!$('#4').is(':checked')){
             $('.figure-shape4').animate({"fill-opacity": "0"}, 600);
         } else {
             $('.figure-shape4').animate({"fill-opacity": "1"}, 600);
         }
     })
-
-
+    $('#5').on('click', ()=>{
+        if(!$('#5').is(':checked')){
+            $('.figure-shape5').animate({"fill-opacity": "0"}, 600);
+        } else {
+            $('.figure-shape5').animate({"fill-opacity": "1"}, 600);
+        }
+    })
 })

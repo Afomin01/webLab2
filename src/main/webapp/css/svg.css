@@ -10,27 +10,27 @@
     stroke-dashoffset: 1000;
     animation: draw-lines 3s linear forwards;
 }
-.figure-shape {
+.figure-shape1 {
     fill: #cf1a1a;
     stroke: #cf1a1a;
 }
 
-.figure-shape1 {
+.figure-shape2 {
     fill: darkorange;
     stroke: darkorange;
 }
 
-.figure-shape2 {
+.figure-shape3 {
     fill: #d9d901;
     stroke: #d9d901;
 }
 
-.figure-shape3 {
+.figure-shape4 {
     fill: forestgreen;
     stroke: forestgreen;
 }
 
-.figure-shape4 {
+.figure-shape5 {
     fill: #1e2cbe;
     stroke: #1e2cbe;
 }
@@ -69,6 +69,12 @@
 }
 .generated-circle{
     fill: white;
+}
+.placed-circle-hit{
+    fill: #3b993b;
+}
+.placed-circle-miss{
+    fill: #cf1a1a;
 }
 
 @keyframes draw-anim {
