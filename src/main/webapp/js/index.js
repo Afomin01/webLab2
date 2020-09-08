@@ -62,7 +62,7 @@ $(function () {
             if(parseConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "/controllerServlet",
+                    url: "controllerServlet",
                     data: {x: parseFloat(getX()), rSet: getSelectedR(), y: getY()},
 
                     error: function (xhr, status, error) {
