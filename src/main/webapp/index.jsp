@@ -16,23 +16,23 @@
             <div id="svg-div">
                 <svg height="600" width="600" viewBox="-35 -35 420 420" xmlns="http://www.w3.org/2000/svg" id="graph">
 
-                    <path d="M175 175 87.5 175 A87.5 87.5 0 0 0 175 262.5Z" class="figure-shape4"/>
-                    <path d="M175 175 105 175 A70 70 0 0 0 175 245Z" class="figure-shape3"/>
-                    <path d="M175 175 122.5 175 A52.5 52.5 0 0 0 175 227.5Z" class="figure-shape2"/>
-                    <path d="M175 175 140 175 A35 35 0 0 0 175 210Z" class="figure-shape1"/>
-                    <path d="M175 175 157.5 175 A17.5 17.5 0 0 0 175 192.5Z" class="figure-shape"/>
+                    <path d="M175 175 87.5 175 A87.5 87.5 0 0 0 175 262.5Z" class="figure-shape4 svg-shape"/>
+                    <path d="M175 175 105 175 A70 70 0 0 0 175 245Z" class="figure-shape3 svg-shape"/>
+                    <path d="M175 175 122.5 175 A52.5 52.5 0 0 0 175 227.5Z" class="figure-shape2 svg-shape"/>
+                    <path d="M175 175 140 175 A35 35 0 0 0 175 210Z" class="figure-shape1 svg-shape"/>
+                    <path d="M175 175 157.5 175 A17.5 17.5 0 0 0 175 192.5Z" class="figure-shape svg-shape"/>
 
-                    <polygon points="175,175 175,0 262.5,0 262.5,175" class="figure-shape4"/>
-                    <polygon points="175,175 175,35 245,35 245,175" class="figure-shape3"/>
-                    <polygon points="175,175 175,70 227.5,70 227.5,175" class="figure-shape2"/>
-                    <polygon points="175,175 175,105 210,105 210,175" class="figure-shape1"/>
-                    <polygon points="175,175 175,140 192.5,140 192.5,175" class="figure-shape"/>
+                    <polygon points="175,175 175,0 262.5,0 262.5,175" class="figure-shape4 svg-shape"/>
+                    <polygon points="175,175 175,35 245,35 245,175" class="figure-shape3 svg-shape"/>
+                    <polygon points="175,175 175,70 227.5,70 227.5,175" class="figure-shape2 svg-shape"/>
+                    <polygon points="175,175 175,105 210,105 210,175" class="figure-shape1 svg-shape"/>
+                    <polygon points="175,175 175,140 192.5,140 192.5,175" class="figure-shape svg-shape"/>
 
-                    <polygon points="175,175 350,175 175,350" class="figure-shape4"/>
-                    <polygon points="175,175 315,175 175,315" class="figure-shape3"/>
-                    <polygon points="175,175 280,175 175,280" class="figure-shape2"/>
-                    <polygon points="175,175 245,175 175,245" class="figure-shape1"/>
-                    <polygon points="175,175 210,175 175,210" class="figure-shape"/>
+                    <polygon points="175,175 350,175 175,350" class="figure-shape4 svg-shape"/>
+                    <polygon points="175,175 315,175 175,315" class="figure-shape3 svg-shape"/>
+                    <polygon points="175,175 280,175 175,280" class="figure-shape2 svg-shape"/>
+                    <polygon points="175,175 245,175 175,245" class="figure-shape1 svg-shape"/>
+                    <polygon points="175,175 210,175 175,210" class="figure-shape svg-shape"/>
 
                     <line x1="171" y1="0" x2="179" y2="0" class="figure-axis-dash"/>
                     <line x1="171" y1="35" x2="179" y2="35" class="figure-axis-dash"/>
