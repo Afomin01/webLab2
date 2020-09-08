@@ -3,9 +3,10 @@
 <html>
 <head>
     <title>Web lab 2</title>
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/svg.css">
     <link rel="stylesheet" href="css/mainPage.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/inputs.css">
     <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -89,24 +90,52 @@
                 </svg>
             </div>
             <div id="input-div">
-                <form id="checkForm">
-                    <input type="text" id="xText">
-                    <select id="ySelect" name="rComboBox">
-                        <option>-4</option>
-                        <option>-3</option>
-                        <option>-2</option>
-                        <option>-1</option>
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                    <input type="checkbox" >
-                    <input type="checkbox" >
-                    <input type="checkbox" >
-                    <input type="checkbox" >
-                    <input type="checkbox" >
+                <form id="checkForm" autocomplete="off">
+                    <label id="form-errors"></label>
+                    <div>
+                        <label>X value:</label>
+                        <input type="text" id="xText" placeholder="X value">
+                    </div>
+                    <div>
+                        <label>Y value:</label>
+                        <select id="ySelect" name="rComboBox">
+                            <option>-4</option>
+                            <option>-3</option>
+                            <option>-2</option>
+                            <option>-1</option>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>R value:</label>
+                        <div>
+                            <input id="1" type="checkbox" name="rCheckbox">
+                            <label for="1">1</label>
+                        </div>
+                        <div>
+                            <input id="2" type="checkbox" name="rCheckbox">
+                            <label for="2">2</label>
+                        </div>
+                        <div>
+                            <input id="3" type="checkbox" name="rCheckbox">
+                            <label for="3">3</label>
+                        </div>
+                        <div>
+                            <input id="4" type="checkbox" name="rCheckbox">
+                            <label for="4">4</label>
+                        </div>
+                        <div>
+                            <input id="5" type="checkbox" name="rCheckbox">
+                            <label for="5">5</label>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="send" class="submit-button">Check</button>
+                    </div>
                 </form>
             </div>
         </div>
