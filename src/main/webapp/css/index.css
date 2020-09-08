@@ -29,3 +29,15 @@ footer{
 footer div{
     margin: 10px;
 }
+th{
+    background: #090909;
+    height: 50px;
+    border: 1px solid white;
+    width: 25%;
+}
+td{
+    height: 50px;
+    text-align: center;
+    background: #151515;
+    border: 1px solid white;
+}

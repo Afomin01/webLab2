@@ -1,4 +1,7 @@
-package ru.itmo.web.lab2;
+package servlets;
+
+import beans.EntriesBean;
+import beans.Entry;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

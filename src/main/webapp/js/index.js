@@ -51,6 +51,30 @@ $(function () {
 
     $('#send').bind('click',function (event) {
         event.preventDefault();
+        let isValid = validate();
+        let parseConfirmed = true;
+        if(isValid===true){
+            if((String(parseFloat(getX())) !== getX()) && (parseFloat(getX()).toExponential() !== getX()) && (parseFloat(getX()).toExponential().replace('+','') !== getX()) && !parseFloat(getX()).toExponential().includes('e-') ) {
+                let parseErrorConfirm = confirm("Your X value precision is too high, so it is recommended to reduce the precision. X value will be rounded to " + parseFloat(getX()) +".\n Would you like to send request with this rounded value?");
+                if(!parseErrorConfirm) parseConfirmed=false;
+            }
+
+            if(parseConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "servlets/ControllerServlet",
+                    data: {x: parseFloat(getX()), rSet: getSelectedR(), y: getY()},
+
+                    error: function (xhr, status, error) {
+                        alert("Server error: " + xhr.responseText);
+                    },
+
+                    timeout: function () {
+                        alert("Timeout reached");
+                    }
+                });
+            }
+        }
     });
 
     $('#graph').mousemove((event)=>{
@@ -99,7 +123,7 @@ $(function () {
         }
     })
     $('#2').on('click', ()=>{
-        if(!$('#1').is(':checked')){
+        if(!$('#2').is(':checked')){
             $('.figure-shape1').animate({"fill-opacity": "0"}, 600);
         } else {
             $('.figure-shape1').animate({"fill-opacity": "1"}, 600);

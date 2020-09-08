@@ -1,4 +1,4 @@
-package ru.itmo.web.lab2;
+package servlets;
 
 import java.io.IOException;
 import java.util.stream.IntStream;

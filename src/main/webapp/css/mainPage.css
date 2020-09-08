@@ -52,3 +52,11 @@
 .submit-button{
     margin: 0 auto;
 }
+#result-table{
+    table-layout: fixed;
+    width: 70%;
+    margin: 40px 15% 0 15%;
+    border-spacing: 2px;
+    border: 2px solid white;
+    border-collapse: collapse;
+}

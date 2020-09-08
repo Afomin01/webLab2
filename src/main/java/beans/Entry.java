@@ -1,4 +1,4 @@
-package ru.itmo.web.lab2;
+package beans;
 
 public class Entry {
     private float x;

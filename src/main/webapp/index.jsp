@@ -1,4 +1,4 @@
-
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -138,6 +138,29 @@
                     </div>
                 </form>
             </div>
+        </div>
+        <div>
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Result</th>
+                    </tr>
+                <tbody>
+<%--                    <jsp:useBean id="entriesBean" scope="session"/>
+                    <c:forEach var="entry"
+                               items="${entryList.entryList}">
+                        <tr>
+                            <td> ${entry.x}</td>
+                            <td> ${entry.y}</td>
+                            <td> ${entry.r}</td>
+                            <td> ${entry.isHit} </td>
+                        </tr>
+                    </c:forEach>--%>
+                </tbody>
+            </table>
         </div>
     </main>
     <jsp:include page="jsp/footer.jsp"/>
