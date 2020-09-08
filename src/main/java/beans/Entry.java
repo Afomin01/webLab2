@@ -36,7 +36,7 @@ public class Entry {
         this.r = r;
     }
 
-    public boolean isHit() {
+    public boolean getHit() {
         return isHit;
     }
 

@@ -149,13 +149,13 @@
                         <th>Result</th>
                     </tr>
                 <tbody>
-                    <jsp:useBean id="entriesBean" scope="session"/>
-                    <c:forEach var="entry" items="${entryList.entryList}">
+                    <jsp:useBean id="entries" scope="session" class="beans.EntriesBean"/>
+                    <c:forEach var="entry" items="${entries.entries}">
                         <tr>
                             <td> ${entry.x}</td>
                             <td> ${entry.y}</td>
                             <td> ${entry.r}</td>
-                            <td> ${entry.isHit} </td>
+                            <td> ${entry.hit} </td>
                         </tr>
                     </c:forEach>
                 </tbody>
