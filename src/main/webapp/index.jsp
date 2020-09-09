@@ -123,23 +123,23 @@
                     <div>
                         <label>R value:</label>
                         <div>
-                            <input id="1" type="checkbox" name="rCheckbox">
+                            <input id="1" type="checkbox" name="rCheckbox" value="1">
                             <label for="1">1</label>
                         </div>
                         <div>
-                            <input id="2" type="checkbox" name="rCheckbox">
+                            <input id="2" type="checkbox" name="rCheckbox" value="2">
                             <label for="2">2</label>
                         </div>
                         <div>
-                            <input id="3" type="checkbox" name="rCheckbox">
+                            <input id="3" type="checkbox" name="rCheckbox" value="3">
                             <label for="3">3</label>
                         </div>
                         <div>
-                            <input id="4" type="checkbox" name="rCheckbox">
+                            <input id="4" type="checkbox" name="rCheckbox" value="4">
                             <label for="4">4</label>
                         </div>
                         <div>
-                            <input id="5" type="checkbox" name="rCheckbox">
+                            <input id="5" type="checkbox" name="rCheckbox" value="5">
                             <label for="5">5</label>
                         </div>
                     </div>
