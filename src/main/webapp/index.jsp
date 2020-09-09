@@ -175,5 +175,6 @@
     <jsp:include page="jsp/footer.jsp"/>
 </body>
 <script src="js/jQuery.js"></script>
+<script src="js/js-cookie.js"></script>
 <script src="js/index.js"></script>
 </html>

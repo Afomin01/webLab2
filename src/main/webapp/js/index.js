@@ -61,18 +61,37 @@ function setDots(){
 }
 
 $(function () {
+    let x =  parseFloat(Cookies.get('itmo-web-lab2-x'));
+    if (!isNaN(x) && x > -5 && x < 3) $('#xText').val(x);
+
+    let y = parseInt(Cookies.get('itmo-web-lab2-y'));
+    if (!isNaN(y) && y >= -4 && y <= 4) $('#ySelect').val(y);
+
+    for (let r = 1; r < 6; r++) {
+        console.log(r);
+        let status = Cookies.get('itmo-web-lab2-r-' + r);
+        if (status !== undefined && status === '1') {
+            $('#' + r).attr('checked', status === '1');
+            $('.figure-shape' + r).animate({'fill-opacity': '1'}, 600);
+        }
+    }
+
     $('#xText').on('change', function () {
         if (validate()) setDots();
+        Cookies.set('itmo-web-lab2-x', getX());
     });
     $('#ySelect').on('change', function () {
         if (validate()) setDots();
+        Cookies.set('itmo-web-lab2-y', getY());
     });
 
     $("input[name='rCheckbox']").on('change', function () {
         if (validate(true)) setDots();
         if (this.checked) {
+            Cookies.set('itmo-web-lab2-r-' + $(this).val(), '1');
             $('.figure-shape' + $(this).val()).animate({'fill-opacity': '1'}, 600);
         } else {
+            Cookies.set('itmo-web-lab2-r-' + $(this).val(), '0');
             $('.figure-shape' + $(this).val()).animate({'fill-opacity': '0'}, 600);
         }
     });
