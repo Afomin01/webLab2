@@ -69,7 +69,7 @@ $(function () {
     });
 
     $("input[name='rCheckbox']").on('change', function () {
-        if (validate()) setDots();
+        if (validate(true)) setDots();
         if (this.checked) {
             $('.figure-shape' + $(this).val()).animate({'fill-opacity': '1'}, 600);
         } else {
