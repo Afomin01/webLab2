@@ -116,8 +116,6 @@ select:focus {
     outline: none;
 }
 
-option:checked {background:url('../assets/select-arrow.svg')}
-
 button {
     color: white;
     border: 2px solid var(--chekbox-checked);

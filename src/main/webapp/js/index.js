@@ -1,4 +1,11 @@
-var fixedDigits = 7;
+const fixedDigits = 7;
+let graph = $('#graph');
+let svg = document.getElementById('graph');
+let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle' );
+circleElement.setAttribute('class', 'generated-circle')
+circleElement.setAttribute('r', "4");
+let pt = svg.createSVGPoint();
+
 function getX() {
     let xValue = $('#xText').val().replace(/\s/g,'').replace(',','.');
 
@@ -73,7 +80,7 @@ function setDot(){
             circleElement.setAttribute('r', "4");
             circleElement.setAttribute('cx', x);
             circleElement.setAttribute('cy', y);
-            document.getElementById('graph').append(circleElement);
+            svg.append(circleElement);
         }
     }
 }
@@ -98,7 +105,7 @@ function setCirclesColor(){
             isHit = false;
         }
 
-        if(isHit) this.setAttribute('style', 'fill: #3b993b;');
+        if (isHit) this.setAttribute('style', 'fill: #3b993b;');
         else this.setAttribute('style', 'fill: #cf1a1a;');
 
     });
@@ -166,13 +173,6 @@ $(function () {
         }
     });
 
-    let graph = $('#graph');
-
-    let svg = document.getElementById('graph');
-    let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle' );
-    let pt = svg.createSVGPoint();
-    circleElement.setAttribute('class', 'generated-circle')
-    circleElement.setAttribute('r', "4");
     graph.on('mousemove',(event) => {
         pt.x = event.clientX;
         pt.y = event.clientY;
@@ -193,8 +193,6 @@ $(function () {
             $("#form-errors").text('You must select at least one R value to interact with graph');
         } else {
             let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle' );
-            let svg = document.getElementById('graph');
-            let pt = svg.createSVGPoint();
             pt.x = event.clientX;
             pt.y = event.clientY;
             pt = pt.matrixTransform(svg.getScreenCTM().inverse());
