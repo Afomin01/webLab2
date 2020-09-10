@@ -143,8 +143,9 @@
                             <label for="5">5</label>
                         </div>
                     </div>
-                    <div>
-                        <button id="send" class="submit-button">Check</button>
+                    <div id="buttons-div">
+                        <div><button id="send" class="submit-button">Check</button></div>
+                        <div><button id="clear" class="clear-button">Clear</button></div>
                     </div>
                 </form>
             </div>

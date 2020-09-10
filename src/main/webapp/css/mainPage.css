@@ -34,9 +34,6 @@
     color: crimson;
     padding: 5px 0;
 }
-.submit-button{
-    margin: 0 auto;
-}
 #result-table{
     table-layout: fixed;
     width: 70%;
@@ -44,4 +41,13 @@
     border-spacing: 2px;
     border: 2px solid white;
     border-collapse: collapse;
+}
+#buttons-div{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    width: 75px;
 }
