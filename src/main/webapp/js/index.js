@@ -1,4 +1,4 @@
-fixedDigits = 7;
+var fixedDigits = 7;
 function getX() {
     let xValue = $('#xText').val().replace(/\s/g,'').replace(',','.');
 
@@ -19,11 +19,11 @@ function getSelectedR() {
     return rValues;
 }
 
-function sendRequest(x, y, rSet) {
+function sendRequest(body) {
     $.ajax({
         type: 'POST',
         url: 'controllerServlet',
-        data: {x: x.toFixed(fixedDigits), rSet: rSet, y: y.toFixed(fixedDigits)},
+        data: body,
 
         success: function (data) {
             var newDoc = document.open("text/html", "replace");
@@ -96,6 +96,10 @@ $(function () {
         }
     });
 
+    $('#clear').on('click', function (event) {
+        sendRequest({clear: 'true'});
+    })
+
     $('#send').on('click',function (event) {
         event.preventDefault();
         let isValid = validate();
@@ -110,7 +114,8 @@ $(function () {
             }
 
             if (parseConfirmed) {
-                sendRequest(parseFloat(getX()), parseFloat(getY()), getSelectedR());
+                sendRequest({x: parseFloat(getX()).toFixed(fixedDigits),
+                    y: parseFloat(getY()).toFixed(fixedDigits), rSet: getSelectedR()});
             }
         }
     });
@@ -157,7 +162,7 @@ $(function () {
             circleElement.setAttribute('cy', Math.round(pt.y));
             svg.append(circleElement);
 
-            sendRequest(x, y, getSelectedR());
+            sendRequest({x: x.toFixed(fixedDigits), y: y.toFixed(fixedDigits), rSet: getSelectedR()});
         }
     });
 })

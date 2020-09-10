@@ -1,5 +1,7 @@
 package servlets;
 
+import beans.EntriesBean;
+
 import java.io.IOException;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -20,6 +22,12 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
+            EntriesBean entries = (EntriesBean) req.getSession().getAttribute("entries");
+            String clear = req.getParameter("clear");
+            if (entries != null && clear != null && clear.equals("true")) {
+                entries.getEntries().clear();
+            }
+
             double x = Double.parseDouble(req.getParameter("x").replace(',', '.'));
             double y = Double.parseDouble(req.getParameter("y").replace(',', '.'));
             String[] rSet = req.getParameterValues("rSet[]");
@@ -28,7 +36,7 @@ public class ControllerServlet extends HttpServlet {
                 throw new IllegalArgumentException();
             }
 
-/*            if (x <= -5 || x >= 3) {
+            /*if (x <= -5 || x >= 3) {
                 throw new IllegalArgumentException();
             }
 

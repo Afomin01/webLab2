@@ -33,7 +33,7 @@ public class AreaCheckServlet extends HttpServlet {
         }
 
         for (int r : rSet) {
-            Entry entry = new Entry(x, y, r, checkHit(x,y,r));
+            Entry entry = new Entry(x, y, r, checkHit(x, y, r));
             entries.getEntries().add(entry);
             results.add(entry);
         }
