@@ -17,11 +17,11 @@
             <div id="svg-div">
                 <svg height="600" width="600" viewBox="-35 -35 420 420" xmlns="http://www.w3.org/2000/svg" id="graph">
 
-                    <path d="M175 175 87.5 175 A87.5 87.5 0 0 0 175 262.5Z" class="figure-shape5 svg-shape"/>
-                    <path d="M175 175 105 175 A70 70 0 0 0 175 245Z" class="figure-shape4 svg-shape"/>
-                    <path d="M175 175 122.5 175 A52.5 52.5 0 0 0 175 227.5Z" class="figure-shape3 svg-shape"/>
-                    <path d="M175 175 140 175 A35 35 0 0 0 175 210Z" class="figure-shape2 svg-shape"/>
-                    <path d="M175 175 157.5 175 A17.5 17.5 0 0 0 175 192.5Z" class="figure-shape1 svg-shape"/>
+                    <path d="M175 175 175 262.5 A87.5 87.5 0 0 1 87.5 175Z" class="figure-shape5 svg-shape"/>
+                    <path d="M175 175 175 245 A70 70 0 0 1 105 175Z" class="figure-shape4 svg-shape"/>
+                    <path d="M175 175 175 227.5 A52.5 52.5 0 0 1 122.5 175Z" class="figure-shape3 svg-shape"/>
+                    <path d="M175 175 175 210 A35 35 0 0 1 140 175Z" class="figure-shape2 svg-shape"/>
+                    <path d="M175 175 175 192.5 A17.5 17.5 0 0 1 157.5 175Z" class="figure-shape1 svg-shape"/>
 
                     <polygon points="175,175 175,0 262.5,0 262.5,175" class="figure-shape5 svg-shape"/>
                     <polygon points="175,175 175,35 245,35 245,175" class="figure-shape4 svg-shape"/>

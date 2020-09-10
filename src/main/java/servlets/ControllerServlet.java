@@ -26,6 +26,8 @@ public class ControllerServlet extends HttpServlet {
             String clear = req.getParameter("clear");
             if (entries != null && clear != null && clear.equals("true")) {
                 entries.getEntries().clear();
+                getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+                return;
             }
 
             double x = Double.parseDouble(req.getParameter("x").replace(',', '.'));
