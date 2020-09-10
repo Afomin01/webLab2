@@ -89,13 +89,7 @@
                     <text x="-7" y="167" class="figure-axis-text">-5</text>
 
                     <c:forEach var="entry" items="${entries.entries}">
-                        <c:if test="${entry.hitResult}">
-                            <circle r="4" class="placed-circle-hit" cx="${35*entry.x+175}" cy="${35*(-entry.y)+175}"></circle>
-                        </c:if>
-                        <c:if test="${not entry.hitResult}">
-                            <circle r="4" class="placed-circle-miss" cx="${35*entry.x+175}" cy="${35*(-entry.y)+175}"></circle>
-                        </c:if>
-
+                        <circle r="4" class="placed-circle" cx="${35*entry.x+175}" cy="${35*(-entry.y)+175}"></circle>
                     </c:forEach>
                 </svg>
             </div>

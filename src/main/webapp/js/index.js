@@ -41,6 +41,8 @@ function sendRequest(body) {
 }
 
 function validate(suppressErr= false) {
+    $('#graph > .generated-form-circle').remove();
+
     $('#form-errors').text('');
     if (isNaN(getX())) {
         if (!suppressErr) $('#form-errors').text('X must be a number in range (-5;3)');
@@ -57,8 +59,46 @@ function validate(suppressErr= false) {
     return true;
 }
 
-function setDots(){
+function setDot(){
+    $('#graph > .generated-form-circle').remove();
 
+    if(getSelectedR().length) {
+        let x = 35 * parseFloat(getX()) + 175;
+        let y = 35 * (-parseFloat(getY())) + 175;
+
+        let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circleElement.setAttribute('class', 'generated-form-circle')
+        circleElement.setAttribute('r', "4");
+        circleElement.setAttribute('cx', x);
+        circleElement.setAttribute('cy', y);
+        document.getElementById('graph').append(circleElement);
+    }
+}
+
+function setCirclesColor(){
+    $('.placed-circle').each(function (index){
+        let x = parseFloat($(this).attr("cx"));
+        let y = parseFloat($(this).attr("cy"));
+        let r = Math.max.apply(null, getSelectedR())
+        let isHit = false;
+
+        x = (x - 175) / 35;
+        y = (y - 175) / -35;
+
+        if (x >= 0 && y >= 0) {
+            isHit = x <= r / 2. && y <= r;
+        } else if (x >= 0 && y <= 0) {
+            isHit = y >= x - r;
+        } else if (x <= 0 && y <= 0) {
+            isHit = Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r / 2., 2);
+        } else {
+            isHit = false;
+        }
+
+        if(isHit) this.setAttribute('style', 'fill: #3b993b;');
+        else this.setAttribute('style', 'fill: #cf1a1a;');
+
+    });
 }
 
 $(function () {
@@ -76,17 +116,21 @@ $(function () {
         }
     }
 
+    setDot();
+    setCirclesColor();
+
     $('#xText').on('change', function () {
-        if (validate()) setDots();
+        if (validate()) setDot();
         Cookies.set('itmo-web-lab2-x', getX());
     });
     $('#ySelect').on('change', function () {
-        if (validate()) setDots();
+        if (validate()) setDot();
         Cookies.set('itmo-web-lab2-y', getY());
     });
 
     $("input[name='rCheckbox']").on('change', function () {
-        if (validate(true)) setDots();
+        if (validate()) setDot();
+        setCirclesColor();
         if (this.checked) {
             Cookies.set('itmo-web-lab2-r-' + $(this).val(), '1');
             $('.figure-shape' + $(this).val()).animate({'fill-opacity': '1'}, 600);
