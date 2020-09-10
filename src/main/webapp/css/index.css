@@ -43,6 +43,7 @@ td{
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
+    padding: 5px;
 }
 #names-sign{
     width: 30%;

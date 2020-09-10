@@ -92,6 +92,32 @@ select {
     border-radius: 5px;
 }
 
+select {
+    color: white;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 38%;
+    max-width: 100%;
+    margin: 0px;
+    border: 0px;
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #090909;
+    background-image: url('../assets/select-arrow.svg');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+select:focus {
+    box-shadow: 0 0 1px 2px rgb(143, 143, 143);
+    outline: none;
+}
+
+option:checked {background:url('../assets/select-arrow.svg')}
+
 button {
     color: white;
     border: 2px solid var(--chekbox-checked);

@@ -63,15 +63,18 @@ function setDot(){
     $('#graph > .generated-form-circle').remove();
 
     if(getSelectedR().length) {
-        let x = 35 * parseFloat(getX()) + 175;
-        let y = 35 * (-parseFloat(getY())) + 175;
+        let x = parseFloat(getX());
+        if (!isNaN(x) && x > -5 && x < 3) {
+            x = 35 * parseFloat(getX()) + 175;
+            let y = 35 * (-parseFloat(getY())) + 175;
 
-        let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        circleElement.setAttribute('class', 'generated-form-circle')
-        circleElement.setAttribute('r', "4");
-        circleElement.setAttribute('cx', x);
-        circleElement.setAttribute('cy', y);
-        document.getElementById('graph').append(circleElement);
+            let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circleElement.setAttribute('class', 'generated-form-circle')
+            circleElement.setAttribute('r', "4");
+            circleElement.setAttribute('cx', x);
+            circleElement.setAttribute('cy', y);
+            document.getElementById('graph').append(circleElement);
+        }
     }
 }
 
@@ -158,35 +161,34 @@ $(function () {
             }
 
             if (parseConfirmed) {
-                sendRequest({x: parseFloat(getX()).toFixed(fixedDigits),
-                    y: parseFloat(getY()).toFixed(fixedDigits), rSet: getSelectedR()});
+                sendRequest({x: parseFloat(getX()), y: parseFloat(getY()), rSet: getSelectedR()});
             }
         }
     });
 
     let graph = $('#graph');
 
+    let svg = document.getElementById('graph');
+    let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle' );
+    let pt = svg.createSVGPoint();
+    circleElement.setAttribute('class', 'generated-circle')
+    circleElement.setAttribute('r', "4");
     graph.on('mousemove',(event) => {
-        $('#graph > .generated-circle').remove();
-        let svg = document.getElementById('graph');
-        let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle' );
-        let pt = svg.createSVGPoint();
         pt.x = event.clientX;
         pt.y = event.clientY;
         pt = pt.matrixTransform(svg.getScreenCTM().inverse());
-        circleElement.setAttribute('class', 'generated-circle')
 
-        circleElement.setAttribute('r', "4");
         circleElement.setAttribute('cx', Math.round(pt.x));
         circleElement.setAttribute('cy', Math.round(pt.y));
         svg.append(circleElement);
     });
 
     graph.on('mouseleave', () => {
-        $('#graph > .generated-circle').remove();
+        circleElement.setAttribute('cx', -40);
+        circleElement.setAttribute('cy', -40);
     });
 
-    graph.on('click', (event) => {
+    graph.on('mousedown', (event) => {
         if (getSelectedR().length === 0) {
             $("#form-errors").text('You must select at least one R value to interact with graph');
         } else {

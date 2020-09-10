@@ -2,6 +2,12 @@
 #graph{
     margin: 15px auto;
     display: block;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+    -o-user-select:none;
 }
 .svg-shape{
     stroke-width: 2px;
