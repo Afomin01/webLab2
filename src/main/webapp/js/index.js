@@ -1,3 +1,4 @@
+fixedDigits = 7;
 function getX() {
     let xValue = $('#xText').val().replace(/\s/g,'').replace(',','.');
 
@@ -22,7 +23,7 @@ function sendRequest(x, y, rSet) {
     $.ajax({
         type: 'POST',
         url: 'controllerServlet',
-        data: {x: x, rSet: rSet, y: y},
+        data: {x: x.toFixed(fixedDigits), rSet: rSet, y: y.toFixed(fixedDigits)},
 
         success: function (data) {
             var newDoc = document.open("text/html", "replace");
@@ -68,7 +69,6 @@ $(function () {
     if (!isNaN(y) && y >= -4 && y <= 4) $('#ySelect').val(y);
 
     for (let r = 1; r < 6; r++) {
-        console.log(r);
         let status = Cookies.get('itmo-web-lab2-r-' + r);
         if (status !== undefined && status === '1') {
             $('#' + r).attr('checked', status === '1');
@@ -110,7 +110,7 @@ $(function () {
             }
 
             if (parseConfirmed) {
-                sendRequest(parseFloat(getX()), getY(), getSelectedR());
+                sendRequest(parseFloat(getX()), parseFloat(getY()), getSelectedR());
             }
         }
     });

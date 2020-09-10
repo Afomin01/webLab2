@@ -6,10 +6,11 @@ public class Entry {
     private int r;
     private boolean hitResult;
 
-    public Entry(double x, double y, int r) {
+    public Entry(double x, double y, int r, boolean hitResult) {
         this.x = x;
         this.y = y;
         this.r = r;
+        this.hitResult = hitResult;
     }
 
     public boolean isHitResult() {
@@ -42,17 +43,5 @@ public class Entry {
 
     public void setR(int r) {
         this.r = r;
-    }
-
-    public void checkHit() {
-        if (x >= 0 && y >= 0) {
-            hitResult = x <= r / 2. && y <= r;
-        } else if (x >= 0 && y <= 0) {
-            hitResult = y >= x - r;
-        } else if (x <= 0 && y <= 0) {
-            hitResult = Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(r / 2., 2);
-        } else {
-            hitResult = false;
-        }
     }
 }
