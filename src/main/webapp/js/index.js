@@ -36,9 +36,10 @@ function sendRequest(body, replace = false) {
             if (replace) {
                 location.reload();
             } else {
-                var newDoc = document.open("text/html", "replace");
+/*              var newDoc = document.open("text/html", "replace");
                 newDoc.write(data);
-                newDoc.close();
+                newDoc.close();*/
+                document.write(data);
             }
         },
         error: function (xhr, status, error) {
