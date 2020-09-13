@@ -173,6 +173,8 @@ $(function () {
         }
     });
 
+    graph.on('contextmenu', (event) => event.preventDefault());
+
     graph.on('mousemove',(event) => {
         pt.x = event.clientX;
         pt.y = event.clientY;
@@ -189,24 +191,26 @@ $(function () {
     });
 
     graph.on('mousedown', (event) => {
-        if (getSelectedR().length === 0) {
-            $("#form-errors").text('You must select at least one R value to interact with graph');
-        } else {
-            let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle' );
-            pt.x = event.clientX;
-            pt.y = event.clientY;
-            pt = pt.matrixTransform(svg.getScreenCTM().inverse());
-            let x = (pt.x - 175) / 35;
-            let y = (pt.y - 175) / -35;
+        if (event.which === 1) {
+            if (getSelectedR().length === 0) {
+                $("#form-errors").text('You must select at least one R value to interact with graph');
+            } else {
+                let circleElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle' );
+                pt.x = event.clientX;
+                pt.y = event.clientY;
+                pt = pt.matrixTransform(svg.getScreenCTM().inverse());
+                let x = (pt.x - 175) / 35;
+                let y = (pt.y - 175) / -35;
 
-            circleElement.setAttribute('class', 'placed-circle')
+                circleElement.setAttribute('class', 'placed-circle')
 
-            circleElement.setAttribute('r', '4');
-            circleElement.setAttribute('cx', Math.round(pt.x));
-            circleElement.setAttribute('cy', Math.round(pt.y));
-            svg.append(circleElement);
+                circleElement.setAttribute('r', '4');
+                circleElement.setAttribute('cx', Math.round(pt.x));
+                circleElement.setAttribute('cy', Math.round(pt.y));
+                svg.append(circleElement);
 
-            sendRequest({x: x.toFixed(fixedDigits), y: y.toFixed(fixedDigits), rSet: getSelectedR()});
+                sendRequest({x: x.toFixed(fixedDigits), y: y.toFixed(fixedDigits), rSet: getSelectedR()});
+            }
         }
     });
 })
