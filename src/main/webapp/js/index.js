@@ -26,16 +26,20 @@ function getSelectedR() {
     return rValues;
 }
 
-function sendRequest(body) {
+function sendRequest(body, replace = false) {
     $.ajax({
         type: 'POST',
         url: 'controllerServlet',
         data: body,
 
         success: function (data) {
-            var newDoc = document.open("text/html", "replace");
-            newDoc.write(data);
-            newDoc.close();
+            if (replace) {
+                location.reload();
+            } else {
+                var newDoc = document.open("text/html", "replace");
+                newDoc.write(data);
+                newDoc.close();
+            }
         },
         error: function (xhr, status, error) {
             alert("Server error: " + xhr.responseText);
@@ -151,7 +155,7 @@ $(function () {
     });
 
     $('#clear').on('click', function (event) {
-        sendRequest({clear: 'true'});
+        sendRequest({clear: 'true'}, true);
     })
 
     $('#send').on('click',function (event) {
