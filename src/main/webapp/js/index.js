@@ -29,7 +29,7 @@ function getSelectedR() {
 function sendRequest(body, replace = false) {
     $.ajax({
         type: 'POST',
-        url: 'controllerServlet',
+        url: '',
         data: body,
 
         success: function (data) {
