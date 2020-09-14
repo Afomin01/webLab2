@@ -1,6 +1,8 @@
 package beans;
 
-public class Entry {
+import java.io.Serializable;
+
+public class Entry implements Serializable {
     private double x;
     private double y;
     private int r;
