@@ -26,10 +26,10 @@ public class AreaCheckServlet extends HttpServlet {
                 .map(Integer::valueOf)
                 .collect(Collectors.toList());
 
-        EntriesBean entries = (EntriesBean) req.getSession().getAttribute("entries");
+        EntriesBean entries = (EntriesBean) getServletContext().getAttribute("entries");
         if (entries == null) {
             entries = new EntriesBean(new ArrayList<>());
-            req.getSession().setAttribute("entries", entries);
+            getServletContext().setAttribute("entries", entries);
         }
 
         for (int r : rSet) {

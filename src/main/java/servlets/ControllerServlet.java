@@ -22,7 +22,7 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            EntriesBean entries = (EntriesBean) req.getSession().getAttribute("entries");
+            EntriesBean entries = (EntriesBean) getServletContext().getAttribute("entries");
             String clear = req.getParameter("clear");
             if (entries != null && clear != null && clear.equals("true")) {
                 entries.getEntries().clear();

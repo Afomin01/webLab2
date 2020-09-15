@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="entries" scope="session" class="beans.EntriesBean"/>
+<jsp:useBean id="entries" scope="application" class="beans.EntriesBean"/>
 <html>
 <head>
     <title>Web lab 2</title>
