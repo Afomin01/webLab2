@@ -1,5 +1,5 @@
 # webLab2
-Lab work made at ITMO University by Artem Bakin and Dmitry Kupershtein.
+Web programming lab work made at ITMO University by Artem Bakin and Dmitry Kupershtein.
 ![](https://user-images.githubusercontent.com/38016689/104229215-035c3b80-545d-11eb-8e63-f185ac091fa9.png)
 
 ## Task
@@ -15,8 +15,8 @@ This area has a variable radius R.
 | R   |int   |[1,5]         | checkbox|
 
 ## Multiple radii
-The radius of the area is set by checkboxes, which imply multiple selection. Therefore, we decided to display areas
-with all possible radii on the graph. This allows to unambiguously determine the position of a point on the chart.
+A group of checkboxes allows for multiple choice of radii. Therefore, we decided to display areas
+with all possible radii on the graph. Selected areas are filled with a solid color.
 
 ## Denial of responsibility
-Some of our technical solutions are dictated by the task, we cannot vouch for their sanity.
+Some of our technical solutions were dictated by the task, we had no opportunity to improve them.
