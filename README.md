@@ -5,7 +5,7 @@ Web programming lab work made at ITMO University by Artem Bakin and Dmitry Kuper
 ## Task
 Develop a web application based on servlets and JSPs that determines whether a point on a coordinate plane falls into a
 given area. User can enter point's coordinates by using form input fields or by clicking with a mouse on the graph. The radius
-of the figure can be set by checking one o several checkboxes.
+of the figure can be set by checking one or several checkboxes.
 
 This area has a variable radius R.
 
